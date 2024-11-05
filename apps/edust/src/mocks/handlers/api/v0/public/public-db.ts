@@ -47,8 +47,7 @@ export const getInstitutesDB = {
         institute_category: "university",
         name: "Tech University",
         slug: "tech-university",
-        photo:
-          "https://res.cloudinary.com/dbaa3pxau/image/upload/v1728625005/edust-cover_l3xkow.svg",
+        photo: "https://dummyimage.com/1280x720/000000/fff",
         contact_email: "institute@example.com",
         phone_number: "01345678901",
         website: "www.institute.com",
@@ -70,8 +69,7 @@ export const getInstitutesDB = {
         institute_category: "university",
         name: "Tech University",
         slug: "tech-university",
-        photo:
-          "https://res.cloudinary.com/dbaa3pxau/image/upload/v1728625005/edust-cover_l3xkow.svg",
+        photo: "https://dummyimage.com/1280x720/000000/fff",
         contact_email: "institute@example.com",
         phone_number: "01345678901",
         website: "www.institute.com",

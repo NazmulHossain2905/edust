@@ -31,7 +31,7 @@ import {
 const FormSchema = z.object({
   institute_name: z.string(),
   institute_type: z.string(),
-  board: z.string(),
+  country: z.string(),
   eiin: z.string(),
 });
 
@@ -41,7 +41,7 @@ export const Institutes = () => {
     defaultValues: {
       institute_name: "",
       institute_type: "",
-      board: "",
+      country: "",
       eiin: "",
     },
   });
@@ -119,7 +119,7 @@ export const Institutes = () => {
 
               <FormField
                 control={form.control}
-                name="board"
+                name="country"
                 render={({ field }) => (
                   <FormItem>
                     <Select
@@ -127,29 +127,14 @@ export const Institutes = () => {
                       defaultValue={field.value}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Boards" />
+                        <SelectValue placeholder="Country" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Boards</SelectLabel>
-                          <SelectItem value="est">
-                            Eastern Standard Time (EST)
-                          </SelectItem>
-                          <SelectItem value="cst">
-                            Central Standard Time (CST)
-                          </SelectItem>
-                          <SelectItem value="mst">
-                            Mountain Standard Time (MST)
-                          </SelectItem>
-                          <SelectItem value="pst">
-                            Pacific Standard Time (PST)
-                          </SelectItem>
-                          <SelectItem value="akst">
-                            Alaska Standard Time (AKST)
-                          </SelectItem>
-                          <SelectItem value="hst">
-                            Hawaii Standard Time (HST)
-                          </SelectItem>
+                          <SelectLabel>Select a Country</SelectLabel>
+                          <SelectItem value="bd">Bangladesh</SelectItem>
+                          <SelectItem value="af">Afghanistan</SelectItem>
+                          <SelectItem value="pl">Palestine</SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
