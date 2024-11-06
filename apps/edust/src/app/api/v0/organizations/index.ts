@@ -11,6 +11,20 @@ export const organizationsApi = createApi({
     getOrgLists: build.query<any, void>({
       query: () => `/`,
     }),
+    getOrgListById: build.query<any, void>({
+      query: (id) => {
+        return `/${id}`;
+      },
+    }),
+
+    getOrganizationsRoles: build.query<any, void>({
+      query: () => `/roles`,
+    }),
+
+    getOrganizationsOrgRoles: build.query<any, void>({
+      query: (orgId) => `/${orgId}/users/org-roles`,
+    }),
+
     postOrganization: build.mutation({
       query: (body) => ({
         url: `/`,
@@ -43,12 +57,15 @@ export const organizationsApi = createApi({
       query: () => `/site-builder/images/me`,
     }),
 
-    deleteUploadImagesByIdSiteBuilder: build.mutation<{ success: boolean; id: number }, number>({
+    deleteUploadImagesByIdSiteBuilder: build.mutation<
+      { success: boolean; id: number },
+      number
+    >({
       query(id) {
         return {
           url: `/site-builder/images/${id}`,
-          method: 'DELETE',
-        }
+          method: "DELETE",
+        };
       },
     }),
   }),
@@ -56,9 +73,12 @@ export const organizationsApi = createApi({
 
 export const {
   useGetOrgListsQuery,
+  useGetOrgListByIdQuery,
+  useGetOrganizationsRolesQuery,
+  useGetOrganizationsOrgRolesQuery,
   usePostOrganizationMutation,
   useGetSiteBuilderMeQuery,
   useEditSiteBuilderMutation,
   useGetUploadImagesSiteBuilderMeQuery,
-  useDeleteUploadImagesByIdSiteBuilderMutation
+  useDeleteUploadImagesByIdSiteBuilderMutation,
 } = organizationsApi;
